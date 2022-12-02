@@ -1,24 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZXR-6h-oLg">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Mis tareas-->
+        <scene sceneID="ZAX-yf-Ckd">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableViewController id="xLZ-EJ-Uqq" customClass="TaskTableViewController" customModule="reto3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="3W7-QK-V5D">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="xLZ-EJ-Uqq" id="pPW-i7-9BX"/>
+                            <outlet property="delegate" destination="xLZ-EJ-Uqq" id="NNl-u4-oqZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Mis tareas" id="DXl-5Z-9u4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Fb0-Cy-DAO">
+                            <connections>
+                                <segue destination="Koj-XA-bBL" kind="presentation" id="Sax-UG-3XQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="taskTableView" destination="3W7-QK-V5D" id="bXa-CW-Z6Z"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tBa-67-OCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1234.3511450381679" y="69.718309859154928"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="e1K-Ig-JCQ">
+            <objects>
+                <viewController id="Koj-XA-bBL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2er-KN-Ede">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sep-nl-SWf">
+                                <rect key="frame" x="0.0" y="15" width="393" height="44"/>
+                                <items>
+                                    <navigationItem title="Nueva tarea" id="ol0-Pv-Gfz">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="3zu-NM-FQc"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DeO-1V-LJY"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo de la tarea" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thg-Ou-CcH">
+                                <rect key="frame" x="51" y="92" width="127" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YyK-9B-StB">
+                                <rect key="frame" x="51" y="121" width="303" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t1W-nh-bnc">
+                                <rect key="frame" x="51" y="217" width="303" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripcion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZM-3R-aQ2">
+                                <rect key="frame" x="51" y="180" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="¿Es una tarea importante?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXA-O1-6GI">
+                                <rect key="frame" x="97" y="285" width="198" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Cuando se entrega?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJH-rl-jP7">
+                                <rect key="frame" x="116" y="407" width="161" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="mkM-1L-0P3">
+                                <rect key="frame" x="0.0" y="450" width="393" height="53"/>
+                            </datePicker>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ONW-8F-UyK">
+                                <rect key="frame" x="160" y="336" width="73" height="32"/>
+                                <segments>
+                                    <segment title="Si"/>
+                                    <segment title="No"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VOv-H7-naD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="thg-Ou-CcH" firstAttribute="leading" secondItem="YyK-9B-StB" secondAttribute="leading" id="0z8-x4-hpr"/>
+                            <constraint firstItem="ONW-8F-UyK" firstAttribute="top" secondItem="WXA-O1-6GI" secondAttribute="bottom" constant="30" id="37e-55-lCn"/>
+                            <constraint firstItem="wZM-3R-aQ2" firstAttribute="leading" secondItem="t1W-nh-bnc" secondAttribute="leading" id="6rK-Yt-POM"/>
+                            <constraint firstItem="VOv-H7-naD" firstAttribute="bottom" secondItem="mkM-1L-0P3" secondAttribute="bottom" constant="246" id="BoU-oY-8Tr"/>
+                            <constraint firstItem="WXA-O1-6GI" firstAttribute="leading" secondItem="VOv-H7-naD" secondAttribute="leading" constant="97" id="CaR-vQ-aqB"/>
+                            <constraint firstItem="thg-Ou-CcH" firstAttribute="top" secondItem="sep-nl-SWf" secondAttribute="bottom" constant="33" id="EYb-mi-oEw"/>
+                            <constraint firstItem="VOv-H7-naD" firstAttribute="trailing" secondItem="YyK-9B-StB" secondAttribute="trailing" constant="39" id="I8W-TG-CbC"/>
+                            <constraint firstItem="WXA-O1-6GI" firstAttribute="top" secondItem="t1W-nh-bnc" secondAttribute="bottom" constant="34" id="OC9-fk-5hi"/>
+                            <constraint firstItem="mkM-1L-0P3" firstAttribute="leading" secondItem="2er-KN-Ede" secondAttribute="leading" id="OOh-lo-Qez"/>
+                            <constraint firstItem="LJH-rl-jP7" firstAttribute="centerX" secondItem="mkM-1L-0P3" secondAttribute="centerX" id="ReB-kh-MaO"/>
+                            <constraint firstItem="mkM-1L-0P3" firstAttribute="trailing" secondItem="sep-nl-SWf" secondAttribute="trailing" id="T2E-YD-eWl"/>
+                            <constraint firstItem="thg-Ou-CcH" firstAttribute="leading" secondItem="VOv-H7-naD" secondAttribute="leading" constant="51" id="TXo-Pq-1p5"/>
+                            <constraint firstItem="thg-Ou-CcH" firstAttribute="top" secondItem="2er-KN-Ede" secondAttribute="top" constant="92" id="Tey-1E-kaU"/>
+                            <constraint firstItem="t1W-nh-bnc" firstAttribute="top" secondItem="wZM-3R-aQ2" secondAttribute="bottom" constant="16" id="Tux-hG-n3d"/>
+                            <constraint firstItem="ONW-8F-UyK" firstAttribute="centerX" secondItem="LJH-rl-jP7" secondAttribute="centerX" id="VYf-A0-6lW"/>
+                            <constraint firstItem="wZM-3R-aQ2" firstAttribute="top" secondItem="YyK-9B-StB" secondAttribute="bottom" constant="25" id="W0s-Gy-dZm"/>
+                            <constraint firstItem="mkM-1L-0P3" firstAttribute="top" secondItem="LJH-rl-jP7" secondAttribute="bottom" constant="22" id="aJu-wR-eht"/>
+                            <constraint firstItem="mkM-1L-0P3" firstAttribute="leading" secondItem="sep-nl-SWf" secondAttribute="leading" id="b01-Ah-0j0"/>
+                            <constraint firstAttribute="trailing" secondItem="mkM-1L-0P3" secondAttribute="trailing" id="d4W-40-PK3"/>
+                            <constraint firstItem="LJH-rl-jP7" firstAttribute="top" secondItem="ONW-8F-UyK" secondAttribute="bottom" constant="40" id="dBU-AW-EtO"/>
+                            <constraint firstItem="YyK-9B-StB" firstAttribute="leading" secondItem="wZM-3R-aQ2" secondAttribute="leading" id="lU3-pL-Kz8"/>
+                            <constraint firstItem="WXA-O1-6GI" firstAttribute="centerX" secondItem="ONW-8F-UyK" secondAttribute="centerX" id="ngR-Ya-ygl"/>
+                            <constraint firstItem="YyK-9B-StB" firstAttribute="top" secondItem="thg-Ou-CcH" secondAttribute="bottom" constant="8" symbolic="YES" id="oSR-Fg-wx9"/>
+                            <constraint firstItem="YyK-9B-StB" firstAttribute="trailing" secondItem="t1W-nh-bnc" secondAttribute="trailing" id="veN-i0-pyJ"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Uc-Ut-mWP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2096.9465648854962" y="60.563380281690144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JcM-W2-388">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZXR-6h-oLg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="na8-XL-3Nq">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xLZ-EJ-Uqq" kind="relationship" relationship="rootViewController" id="FJA-kZ-VnY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hv-Re-kca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="307.63358778625951" y="69.718309859154928"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

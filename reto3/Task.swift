@@ -18,8 +18,8 @@ class Task{
     var isImportant: Bool = false
     var isUrgent: Bool {
         let calendar = Calendar.current
-        let date1 = calendar.startOfDay(for: Date())
-        let date2 = calendar.startOfDay(for: deadLine)
+        let date1 = calendar.startOfDay(for: deadLine)
+        let date2 = calendar.startOfDay(for: Date())
         if let daysBeforeCount = calendar.dateComponents([.day], from: date1, to: date2).day{
             return daysBeforeCount <= 3
         }

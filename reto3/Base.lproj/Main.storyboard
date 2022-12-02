@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="1234.3511450381679" y="69.718309859154928"/>
         </scene>
-        <!--View Controller-->
+        <!--New Task View Controller-->
         <scene sceneID="e1K-Ig-JCQ">
             <objects>
-                <viewController id="Koj-XA-bBL" sceneMemberID="viewController">
+                <viewController id="Koj-XA-bBL" customClass="NewTaskViewController" customModule="reto3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2er-KN-Ede">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,8 +48,16 @@
                                 <rect key="frame" x="0.0" y="15" width="393" height="44"/>
                                 <items>
                                     <navigationItem title="Nueva tarea" id="ol0-Pv-Gfz">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="3zu-NM-FQc"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DeO-1V-LJY"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="3zu-NM-FQc">
+                                            <connections>
+                                                <action selector="close:" destination="Koj-XA-bBL" id="6ek-Xd-3h1"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DeO-1V-LJY">
+                                            <connections>
+                                                <action selector="addTask:" destination="Koj-XA-bBL" id="Zpg-3D-4zo"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -127,6 +135,12 @@
                             <constraint firstItem="YyK-9B-StB" firstAttribute="trailing" secondItem="t1W-nh-bnc" secondAttribute="trailing" id="veN-i0-pyJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="deadLineDatePicker" destination="mkM-1L-0P3" id="QOK-cZ-70R"/>
+                        <outlet property="descriptionLabel" destination="t1W-nh-bnc" id="NKd-cB-W5i"/>
+                        <outlet property="isImportantSegmentedControl" destination="ONW-8F-UyK" id="k5W-Vw-xlH"/>
+                        <outlet property="titleLabel" destination="YyK-9B-StB" id="1Ud-yP-r0h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Uc-Ut-mWP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

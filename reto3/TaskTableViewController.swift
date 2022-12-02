@@ -47,4 +47,24 @@ class TaskTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? NewTaskViewController{
+            destination.delegate = self
+        }
+    }
+}
+
+extension TaskTableViewController : NewTaskViewDelegate{
+    func newTaskViewController(_ viewController: NewTaskViewController, didCreateTask newTask: Task) {
+        taskList.append(newTask)
+        taskTableView.reloadData()
+    }
+    func newTaskViewController(_ viewController: NewTaskViewController, didDeleteTask oldTask: Task) {
+        for (index, value) in taskList.enumerated(){
+            if oldTask == value{
+                taskList.remove(at: index)
+            }
+        }
+        
+    }
 }

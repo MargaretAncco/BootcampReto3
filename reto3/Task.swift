@@ -45,5 +45,11 @@ class Task{
         self.deadLine = deadLine
     }
     
+}
+extension Task: Equatable{
+    static func == (lhs: Task, rhs: Task) -> Bool {
+        lhs.title == rhs.title && lhs.description == rhs.description
+    }
+    
     
 }

@@ -11,11 +11,11 @@ class TaskTableViewController: UITableViewController {
     @IBOutlet var taskTableView: UITableView!
     
     @IBOutlet weak var isEmptyImage: UIView!
-    var taskList = [Task(isImportant: true, title: "Comer", description: "Comer mi almuerzo", deadLine: Date())]
+    var taskList : [Task] = []
     var selectedTask: Task? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        isEmptyImage.isHidden = true
+        isEmptyImage.isHidden = false
         taskTableView.register(UITableViewCell.self, forCellReuseIdentifier: "taskCell")
     }
     let alertaMessageWritten = UIAlertController(title: "Error", message: "Debe colocar un titulo", preferredStyle: .alert)

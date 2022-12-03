@@ -45,6 +45,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		853C3AA6293B9A4D00A2F294 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				854EFAAA293A60AA00524409 /* ViewController.swift */,
+				854EFAC0293AC40900524409 /* EditTaskViewController.swift */,
+				854EFABC293A6A9300524409 /* TaskTableViewController.swift */,
+				854EFABE293AA5E900524409 /* NewTaskViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		853C3AA7293B9A5C00A2F294 /* Modelos */ = {
+			isa = PBXGroup;
+			children = (
+				854EFABA293A61D200524409 /* Task.swift */,
+			);
+			path = Modelos;
+			sourceTree = "<group>";
+		};
+		853C3AA8293B9AC200A2F294 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				854EFAAC293A60AA00524409 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		854EFA9A293A60AA00524409 = {
 			isa = PBXGroup;
 			children = (
@@ -66,15 +93,12 @@
 			children = (
 				854EFAA6293A60AA00524409 /* AppDelegate.swift */,
 				854EFAA8293A60AA00524409 /* SceneDelegate.swift */,
-				854EFAAA293A60AA00524409 /* ViewController.swift */,
-				854EFAAC293A60AA00524409 /* Main.storyboard */,
-				854EFAC0293AC40900524409 /* EditTaskViewController.swift */,
-				854EFABC293A6A9300524409 /* TaskTableViewController.swift */,
-				854EFABE293AA5E900524409 /* NewTaskViewController.swift */,
+				853C3AA8293B9AC200A2F294 /* Views */,
+				853C3AA6293B9A4D00A2F294 /* Controller */,
 				854EFAAF293A60AB00524409 /* Assets.xcassets */,
 				854EFAB1293A60AB00524409 /* LaunchScreen.storyboard */,
 				854EFAB4293A60AB00524409 /* Info.plist */,
-				854EFABA293A61D200524409 /* Task.swift */,
+				853C3AA7293B9A5C00A2F294 /* Modelos */,
 			);
 			path = reto3;
 			sourceTree = "<group>";

@@ -31,7 +31,7 @@ class NewTaskViewController: UIViewController {
         let deadLine = deadLineDatePicker.date
         let title = titleLabel.text
         let description = descriptionLabel.text
-        let isImportant = isImportantSegmentedControl.hashValue == 0
+        let isImportant = isImportantSegmentedControl.selectedSegmentIndex == 0
         
         guard let t = title, !t.isEmpty else {
             alertaMessageWritten.addAction(actionOk)

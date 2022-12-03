@@ -16,6 +16,7 @@
 		854EFABB293A61D200524409 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854EFABA293A61D200524409 /* Task.swift */; };
 		854EFABD293A6A9300524409 /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854EFABC293A6A9300524409 /* TaskTableViewController.swift */; };
 		854EFABF293AA5E900524409 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854EFABE293AA5E900524409 /* NewTaskViewController.swift */; };
+		854EFAC1293AC40900524409 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854EFAC0293AC40900524409 /* EditTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		854EFABA293A61D200524409 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		854EFABC293A6A9300524409 /* TaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
 		854EFABE293AA5E900524409 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		854EFAC0293AC40900524409 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				854EFAA8293A60AA00524409 /* SceneDelegate.swift */,
 				854EFAAA293A60AA00524409 /* ViewController.swift */,
 				854EFAAC293A60AA00524409 /* Main.storyboard */,
+				854EFAC0293AC40900524409 /* EditTaskViewController.swift */,
 				854EFABC293A6A9300524409 /* TaskTableViewController.swift */,
 				854EFABE293AA5E900524409 /* NewTaskViewController.swift */,
 				854EFAAF293A60AB00524409 /* Assets.xcassets */,
@@ -152,6 +155,7 @@
 				854EFAAB293A60AA00524409 /* ViewController.swift in Sources */,
 				854EFAA7293A60AA00524409 /* AppDelegate.swift in Sources */,
 				854EFABF293AA5E900524409 /* NewTaskViewController.swift in Sources */,
+				854EFAC1293AC40900524409 /* EditTaskViewController.swift in Sources */,
 				854EFAA9293A60AA00524409 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

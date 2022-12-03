@@ -3,11 +3,152 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Edit Task View Controller-->
+        <scene sceneID="Cft-tL-Xay">
+            <objects>
+                <viewController id="Atj-g9-rQb" customClass="EditTaskViewController" customModule="reto3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w7O-uW-zrn">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hTj-IB-WLT">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="buU-u4-EZO"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Editar tarea" id="7bJ-M9-gfM">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="7fH-la-yR9"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wyF-ne-rBg">
+                                            <connections>
+                                                <action selector="saveEditedTask:" destination="Atj-g9-rQb" id="EWO-8b-yyY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Titulo de la tarea" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGM-bg-Ao2">
+                                <rect key="frame" x="51" y="136" width="127" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="PFp-tx-cln"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdy-H7-b1s">
+                                <rect key="frame" x="51" y="165" width="303" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="tpD-GI-mgg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9tD-Z5-dNi">
+                                <rect key="frame" x="51" y="261" width="303" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="gSv-qk-orY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Descripcion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBf-ZJ-5hy">
+                                <rect key="frame" x="51" y="224" width="91" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Je8-DP-Dh2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="¿Es una tarea importante?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4u-dM-zuw">
+                                <rect key="frame" x="97" y="329" width="198" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="WV6-sp-ZO0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="¿Cuando se entrega?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeI-5I-xUK">
+                                <rect key="frame" x="116" y="451" width="161" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="gwx-um-F8g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="nLH-8a-nSn">
+                                <rect key="frame" x="0.0" y="477.66666666666669" width="393" height="34.333333333333314"/>
+                            </datePicker>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2se-aI-reX">
+                                <rect key="frame" x="160" y="380" width="73" height="32"/>
+                                <segments>
+                                    <segment title="Si"/>
+                                    <segment title="No"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGz-kW-mNx">
+                                <rect key="frame" x="285" y="77" width="108" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="trash.fill" catalog="system" title="Eliminar">
+                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteTask:" destination="Atj-g9-rQb" eventType="touchUpInside" id="5dH-o4-f9R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bv0-z0-UOK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bv0-z0-UOK" firstAttribute="trailing" secondItem="hdy-H7-b1s" secondAttribute="trailing" constant="39" id="1Vw-le-MhE"/>
+                            <constraint firstItem="uBf-ZJ-5hy" firstAttribute="top" secondItem="hdy-H7-b1s" secondAttribute="bottom" constant="25" id="3Fc-5z-J0U"/>
+                            <constraint firstItem="eGM-bg-Ao2" firstAttribute="top" secondItem="hTj-IB-WLT" secondAttribute="bottom" constant="92" id="4AR-gB-IDd"/>
+                            <constraint firstItem="hTj-IB-WLT" firstAttribute="trailing" secondItem="DGz-kW-mNx" secondAttribute="trailing" id="AKo-hC-Kyw"/>
+                            <constraint firstItem="DGz-kW-mNx" firstAttribute="trailing" secondItem="nLH-8a-nSn" secondAttribute="trailing" id="AyR-6j-iTc"/>
+                            <constraint firstItem="hdy-H7-b1s" firstAttribute="top" secondItem="DGz-kW-mNx" secondAttribute="bottom" constant="48" id="CDF-3I-fzI"/>
+                            <constraint firstItem="hTj-IB-WLT" firstAttribute="leading" secondItem="w7O-uW-zrn" secondAttribute="leading" id="HbV-0H-l15"/>
+                            <constraint firstAttribute="trailing" secondItem="hTj-IB-WLT" secondAttribute="trailing" id="IQ3-QW-R1K"/>
+                            <constraint firstItem="nLH-8a-nSn" firstAttribute="top" secondItem="FeI-5I-xUK" secondAttribute="bottom" constant="5.6666666666667425" id="NFf-x4-Pco"/>
+                            <constraint firstItem="hdy-H7-b1s" firstAttribute="leading" secondItem="uBf-ZJ-5hy" secondAttribute="leading" id="NWT-Yf-i9w"/>
+                            <constraint firstItem="DGz-kW-mNx" firstAttribute="top" secondItem="hTj-IB-WLT" secondAttribute="bottom" constant="33" id="S4Y-Uh-1SM"/>
+                            <constraint firstItem="hdy-H7-b1s" firstAttribute="top" secondItem="eGM-bg-Ao2" secondAttribute="bottom" constant="8" symbolic="YES" id="UuL-xl-SKG"/>
+                            <constraint firstItem="uBf-ZJ-5hy" firstAttribute="leading" secondItem="9tD-Z5-dNi" secondAttribute="leading" id="VzH-Xj-cEY"/>
+                            <constraint firstItem="hTj-IB-WLT" firstAttribute="top" secondItem="Bv0-z0-UOK" secondAttribute="top" id="Y8j-3q-72p"/>
+                            <constraint firstItem="2se-aI-reX" firstAttribute="top" secondItem="S4u-dM-zuw" secondAttribute="bottom" constant="30" id="adN-6Y-sba"/>
+                            <constraint firstItem="S4u-dM-zuw" firstAttribute="centerX" secondItem="2se-aI-reX" secondAttribute="centerX" id="c8x-dJ-dut"/>
+                            <constraint firstItem="FeI-5I-xUK" firstAttribute="top" secondItem="2se-aI-reX" secondAttribute="bottom" constant="40" id="cWD-kS-9J9"/>
+                            <constraint firstItem="hTj-IB-WLT" firstAttribute="leading" secondItem="nLH-8a-nSn" secondAttribute="leading" id="g9Q-Ef-MED"/>
+                            <constraint firstItem="eGM-bg-Ao2" firstAttribute="leading" secondItem="hdy-H7-b1s" secondAttribute="leading" id="gYq-sd-cMz"/>
+                            <constraint firstItem="S4u-dM-zuw" firstAttribute="top" secondItem="9tD-Z5-dNi" secondAttribute="bottom" constant="34" id="lnv-oQ-DW0"/>
+                            <constraint firstItem="FeI-5I-xUK" firstAttribute="centerX" secondItem="nLH-8a-nSn" secondAttribute="centerX" id="mmK-9H-aY4"/>
+                            <constraint firstItem="eGM-bg-Ao2" firstAttribute="leading" secondItem="Bv0-z0-UOK" secondAttribute="leading" constant="51" id="mvq-Oe-0F5"/>
+                            <constraint firstItem="2se-aI-reX" firstAttribute="centerX" secondItem="FeI-5I-xUK" secondAttribute="centerX" id="p0D-yb-AbQ"/>
+                            <constraint firstItem="9tD-Z5-dNi" firstAttribute="top" secondItem="uBf-ZJ-5hy" secondAttribute="bottom" constant="16" id="q4e-k4-rbd"/>
+                            <constraint firstItem="S4u-dM-zuw" firstAttribute="leading" secondItem="Bv0-z0-UOK" secondAttribute="leading" constant="97" id="rTu-yf-DUT"/>
+                            <constraint firstItem="hdy-H7-b1s" firstAttribute="trailing" secondItem="9tD-Z5-dNi" secondAttribute="trailing" id="tgu-Jt-9GS"/>
+                            <constraint firstItem="Bv0-z0-UOK" firstAttribute="bottom" secondItem="nLH-8a-nSn" secondAttribute="bottom" constant="237" id="zwZ-Le-exd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="deadLineDatePicker" destination="nLH-8a-nSn" id="gcD-Ve-lgp"/>
+                        <outlet property="descriotionTextField" destination="9tD-Z5-dNi" id="nbz-kl-DvH"/>
+                        <outlet property="isImportantSegmentedControl" destination="2se-aI-reX" id="KgZ-Xg-riK"/>
+                        <outlet property="titleTextField" destination="hdy-H7-b1s" id="HqS-4K-39S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cN8-b3-Ues" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1580.9160305343512" y="-732.3943661971831"/>
+        </scene>
         <!--Mis tareas-->
         <scene sceneID="ZAX-yf-Ckd">
             <objects>
@@ -30,6 +171,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="taskTableView" destination="3W7-QK-V5D" id="bXa-CW-Z6Z"/>
+                        <segue destination="Atj-g9-rQb" kind="presentation" identifier="GoToEditTask" id="Bjc-bX-rGC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tBa-67-OCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -166,6 +308,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="trash.fill" catalog="system" width="119" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

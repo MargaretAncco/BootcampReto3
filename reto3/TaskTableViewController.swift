@@ -11,7 +11,7 @@ class TaskTableViewController: UITableViewController {
     @IBOutlet var taskTableView: UITableView!
     
     var taskList = [Task(isImportant: true, title: "Comer", description: "Comer mi almuerzo", deadLine: Date())]
-    
+    var selectedTask: Task? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         taskTableView.register(UITableViewCell.self, forCellReuseIdentifier: "taskCell")
@@ -45,10 +45,18 @@ class TaskTableViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        selectedTask = taskList[indexPath.row]
+        performSegue(withIdentifier: "GoToEditTask", sender: nil)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? NewTaskViewController{
+            destination.delegate = self
+        }
+        else if let destination = segue.destination as? EditTaskViewController{
+            if let selectedTask = selectedTask{
+                destination.task = selectedTask
+            }
             destination.delegate = self
         }
     }
@@ -67,4 +75,25 @@ extension TaskTableViewController : NewTaskViewDelegate{
         }
         
     }
+}
+extension TaskTableViewController : EditTaskViewDelegate{
+    func editTaskViewDelegate(_ viewController: EditTaskViewController, didEditTask editedTask: Task) {
+        for (index, task) in taskList.enumerated(){
+            if task.id == editedTask.id{
+                taskList[index] = editedTask
+                taskTableView.reloadData()
+            }
+        }
+    }
+    
+    func editTaskViewDelegate(_ viewController: EditTaskViewController, didDeleteTask deletedTask: Task) {
+        for (index, task) in taskList.enumerated(){
+            if task.id == deletedTask.id{
+                taskList.remove(at: index)
+                taskTableView.reloadData()
+            }
+        }
+    }
+    
+    
 }

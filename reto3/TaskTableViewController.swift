@@ -10,18 +10,23 @@ import UIKit
 class TaskTableViewController: UITableViewController {
     @IBOutlet var taskTableView: UITableView!
     
+    @IBOutlet weak var isEmptyImage: UIView!
     var taskList = [Task(isImportant: true, title: "Comer", description: "Comer mi almuerzo", deadLine: Date())]
     var selectedTask: Task? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
+        isEmptyImage.isHidden = true
         taskTableView.register(UITableViewCell.self, forCellReuseIdentifier: "taskCell")
     }
-
+    let alertaMessageWritten = UIAlertController(title: "Error", message: "Debe colocar un titulo", preferredStyle: .alert)
+    let actionOk = UIAlertAction(title:"ok", style: .default){(_) in
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
         return taskList.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,6 +70,7 @@ class TaskTableViewController: UITableViewController {
 extension TaskTableViewController : NewTaskViewDelegate{
     func newTaskViewController(_ viewController: NewTaskViewController, didCreateTask newTask: Task) {
         taskList.append(newTask)
+        isEmptyImage.isHidden = true
         taskTableView.reloadData()
     }
     func newTaskViewController(_ viewController: NewTaskViewController, didDeleteTask oldTask: Task) {
@@ -75,6 +81,7 @@ extension TaskTableViewController : NewTaskViewDelegate{
         }
         
     }
+    
 }
 extension TaskTableViewController : EditTaskViewDelegate{
     func editTaskViewDelegate(_ viewController: EditTaskViewController, didEditTask editedTask: Task) {
@@ -91,6 +98,10 @@ extension TaskTableViewController : EditTaskViewDelegate{
             if task.id == deletedTask.id{
                 taskList.remove(at: index)
                 taskTableView.reloadData()
+                if taskList.count == 0{
+                    print("dssdsfds")
+                    isEmptyImage.isHidden = false
+                }
             }
         }
     }

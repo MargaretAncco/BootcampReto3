@@ -26,7 +26,7 @@ class EditTaskViewController: UIViewController {
         let isImportant = isImportantSegmentedControl.selectedSegmentIndex == 0
         
         guard let t = title, !t.isEmpty else {
-            alertaMessageWritten.addAction(actionOk)
+            alertaMessageWritten.message = "Debe colocar un titulo"
             alertaMessageWritten.addAction(actionOk)
             present(alertaMessageWritten, animated: true, completion: nil)
             
@@ -63,6 +63,7 @@ class EditTaskViewController: UIViewController {
         let index = task.isImportant ? 0 : 1
         isImportantSegmentedControl.selectedSegmentIndex = index
         deadLineDatePicker.date = task.deadLine
+        deadLineDatePicker.minimumDate = Date()
         print (task.title)
         print (task.description)
         print (task.deadLine)
